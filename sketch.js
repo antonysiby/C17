@@ -48,14 +48,12 @@ mainCyclist.addAnimation("SahilRunning",mainRacerImg1);
 mainCyclist.scale=0.07;
   
 //set collider for mainCyclist
-mainCyclist.setCollider("rectangle",0,0,350,350);
+mainCyclist.setCollider("rectangle",0,0,40,40);
   
 gameOver = createSprite(650,150);
 gameOver.addImage(gameOverImg);
 gameOver.scale = 0.8;
 gameOver.visible = false;  
-
-restart = 0;
   
 pinkCG = new Group();
 yellowCG = new Group();
@@ -125,7 +123,8 @@ function draw() {
 }else if (gameState === END) {
     gameOver.visible = true;
     //Add code to show restart game instrution in text here
-    text("Press Up Arrow to Restart the Game"+ restart,200,200);
+    textSize(20);
+    text(" Press Up Arrow to Restart the Game! " ,500,200);
   
     path.velocityX = 0;
     mainCyclist.velocityY = 0;
@@ -182,6 +181,8 @@ function reset(){
   mainCyclist.addAnimation("SahilRunning",mainRacerImg1)
 
   pinkCG.destroyEach();
+  yellowCG.destroyEach();
+  redCG.destroyEach();
 
   distance = 0
 }
